@@ -1,0 +1,12 @@
+- if @open_record
+  .alert.alert-info{role: 'alert'}
+    = form_tag close_project_record_path(@open_record.project, @open_record), method: :post do
+      Seit #{l @open_record.begun_at.to_time} ist das Projekt #{@open_record.project.name} offen.
+      = button_tag 'Close', class: 'btn btn-primary'
+
+.row
+  - @projects.each do |project|
+    .col-md-2
+      = form_tag open_project_records_path(project), method: :post do
+        = button_tag class: 'btn magic-button', style: "background-color:#{project.color}" do
+          = project.name

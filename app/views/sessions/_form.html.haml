@@ -1,0 +1,6 @@
+= form_for @session , html: { class: 'form-signin' } do |f|
+  %h2.form-signin-heading Anmelden
+  = f.text_field :username, class: 'form-control', placeholder: 'Benutzername', required: true, autofocus: true
+  = f.password_field :password, class: 'form-control', placeholder: 'Passwort', required: true
+  = f.button class: 'btn btn-lg btn-primary btn-block' do
+    Sign in

@@ -1,0 +1,24 @@
+.page-header
+  %h1= @project.name
+
+%table.table.table-striped
+  %thead
+    %tr
+      %th Beginn
+      %th Ende
+      %th &nbsp;
+  %tbody
+    - @project.records.sort.each do |record|
+      %tr
+        %td= l record.begun_at
+        %td
+          - if record.ended_at
+            = l record.ended_at
+          - else
+            &nbsp;
+        %td
+          = link_to edit_project_record_path(@project, record) do
+            = fa_icon 'edit'
+          = fa_icon 'fw'
+          = link_to project_record_path(@project, record), method: :delete, data: { confirm: 'Wirklich löschen' } do
+            = fa_icon 'times'

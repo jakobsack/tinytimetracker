@@ -1,0 +1,21 @@
+.page-header
+  %h1 Projekte
+
+%table.table.table-striped
+  %thead
+    %tr
+      %th Name
+      %th Color
+      %th Active
+      %th &nbsp;
+  %tbody
+    - @projects.each do |project|
+      %tr
+        %td= link_to project.name, project
+        %td{style: "background-color:#{project.color}"} &nbsp;
+        %td= project.active ? 'Yes' : 'No'
+        %td
+          = link_to edit_project_path(project) do
+            = fa_icon 'edit'
+
+%p= link_to 'Projekt hinzufügen', new_project_path

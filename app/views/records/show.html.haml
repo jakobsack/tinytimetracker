@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @record.user %>
+</p>
+
+<p>
+  <strong>Project:</strong>
+  <%= @record.project %>
+</p>
+
+<p>
+  <strong>Begun at:</strong>
+  <%= @record.begun_at %>
+</p>
+
+<p>
+  <strong>Ended at:</strong>
+  <%= @record.ended_at %>
+</p>
+
+<%= link_to 'Edit', edit_record_path(@record) %> |
+<%= link_to 'Back', records_path %>
