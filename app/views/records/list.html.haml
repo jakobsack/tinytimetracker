@@ -1,0 +1,31 @@
+.page-header
+  %h1 Records
+
+%table.table.table-striped
+  %thead
+    %tr
+      %th Projekt
+      %th Farbe
+      %th Beginn
+      %th Ende
+      %th &nbsp;
+  %tbody
+    - @records.sort.each do |record|
+      %tr
+        %td= record.project.name
+        %td{style: "background-color:#{record.project.color}"} &nbsp;
+        %td= l record.begun_at
+        %td
+          - if record.ended_at
+            = l record.ended_at
+          - else
+            &nbsp;
+        %td
+          = link_to edit_project_record_path(record.project, record) do
+            = fa_icon 'edit'
+          = fa_icon 'fw'
+          = link_to project_record_path(record.project, record), method: :delete, data: { confirm: 'Wirklich löschen' } do
+            = fa_icon 'times'
+
+.alert.alert-information
+  Records können auf den Projektseiten hinzugefügt werden.

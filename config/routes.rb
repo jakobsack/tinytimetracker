@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       end
     end
   end
+  get 'records' => 'records#list'
 
   root 'projects#dashboard'
 end

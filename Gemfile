@@ -21,6 +21,7 @@ gem 'formtastic', '~> 3.1'                      # Better forms
 gem 'twitter-bootstrap-rails', '~> 3.2'         # Bootstrap files
 gem 'formtastic-bootstrap', '~> 3.1'            # Bootstrap files for formtastic
 gem 'font-awesome-rails', '~> 4.3.0'            # nice symbols
+gem 'rgb', '~> 0.1.0'                           # colors
 
 group :development, :test do
   gem 'byebug'

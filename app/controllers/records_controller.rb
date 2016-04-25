@@ -1,5 +1,5 @@
 class RecordsController < ApplicationController
-  before_action :set_project
+  before_action :set_project, except: [:list]
   before_action :set_record, only: [:show, :edit, :update, :destroy, :close]
 
   # GET /records
@@ -85,10 +85,14 @@ class RecordsController < ApplicationController
     end
   end
 
+  def list
+    @records = current_user.records
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_record
-      @record = project.records.find(params[:id])
+      @record = @project.records.find(params[:id])
     end
 
     def set_project

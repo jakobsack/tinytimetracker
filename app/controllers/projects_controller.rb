@@ -15,12 +15,12 @@ class ProjectsController < ApplicationController
   # GET /projects/new
   def new
     @project = current_user.projects.build
-    @projects = current_user.projects
+    @projects = current_user.projects.where(parent_id: nil)
   end
 
   # GET /projects/1/edit
   def edit
-    @projects = current_user.projects
+    @projects = current_user.projects.where(parent_id: nil)
   end
 
   # POST /projects
@@ -33,7 +33,7 @@ class ProjectsController < ApplicationController
         format.html { redirect_to @project, notice: 'Project was successfully created.' }
         format.json { render :show, status: :created, location: @project }
       else
-        @projects = current_user.projects
+        @projects = current_user.projects.where(parent_id: nil)
         format.html { render :new }
         format.json { render json: @project.errors, status: :unprocessable_entity }
       end
@@ -48,7 +48,7 @@ class ProjectsController < ApplicationController
         format.html { redirect_to @project, notice: 'Project was successfully updated.' }
         format.json { render :show, status: :ok, location: @project }
       else
-        @projects = current_user.projects
+        @projects = current_user.projects.where(parent_id: nil)
         format.html { render :edit }
         format.json { render json: @project.errors, status: :unprocessable_entity }
       end

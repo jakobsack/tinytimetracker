@@ -22,3 +22,5 @@
           = fa_icon 'fw'
           = link_to project_record_path(@project, record), method: :delete, data: { confirm: 'Wirklich löschen' } do
             = fa_icon 'times'
+
+%p= link_to 'Record hinzufügen', new_project_record_path(@project)
