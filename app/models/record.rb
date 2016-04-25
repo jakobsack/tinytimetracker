@@ -9,4 +9,12 @@ class Record < ActiveRecord::Base
     record.ended_at = Time.now
     record.save!
   end
+
+  def <=> other
+    if other.project_id == project_id
+      other.begun_at <=> begun_at
+    else
+      project <=> other.project
+    end
+  end
 end

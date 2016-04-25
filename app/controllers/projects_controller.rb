@@ -30,7 +30,7 @@ class ProjectsController < ApplicationController
 
     respond_to do |format|
       if @project.save
-        format.html { redirect_to @project, notice: 'Project was successfully created.' }
+        format.html { redirect_to projects_path, notice: 'Project was successfully created.' }
         format.json { render :show, status: :created, location: @project }
       else
         @projects = current_user.projects.where(parent_id: nil)

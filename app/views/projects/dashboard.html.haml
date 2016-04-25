@@ -5,8 +5,9 @@
       = button_tag 'Close', class: 'btn btn-primary'
 
 .row
-  - @projects.each do |project|
+  - @projects.sort.each do |project|
     .col-md-2.col-sm3.col-xs-6
       = form_tag open_project_records_path(project), method: :post do
         = button_tag class: 'btn magic-button', style: "background-color:#{project.color};color:#{magic_font_color(project.color)}" do
           = project.name
+      %br

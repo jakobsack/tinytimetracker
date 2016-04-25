@@ -6,6 +6,11 @@ class RecordsController < ApplicationController
   # GET /records.json
   def index
     @records = @project.records
+
+    respond_to do |format|
+      format.html { redirect_to project_records_path }
+      format.json
+    end
   end
 
   # GET /records/1
@@ -15,11 +20,13 @@ class RecordsController < ApplicationController
 
   # GET /records/new
   def new
+    @projects = current_user.projects
     @record = @project.records.build
   end
 
   # GET /records/1/edit
   def edit
+    @projects = current_user.projects
   end
 
   # POST /records
@@ -33,6 +40,7 @@ class RecordsController < ApplicationController
         format.html { redirect_to @project, notice: 'Record was successfully created.' }
         format.json { render :show, status: :created, location: project_record_path(@project, @record) }
       else
+        @projects = current_user.projects
         format.html { render :new }
         format.json { render json: @record.errors, status: :unprocessable_entity }
       end
@@ -47,6 +55,7 @@ class RecordsController < ApplicationController
         format.html { redirect_to @project, notice: 'Record was successfully updated.' }
         format.json { render :show, status: :ok, location: project_record_path(@project, @record) }
       else
+        @projects = current_user.projects
         format.html { render :edit }
         format.json { render json: @record.errors, status: :unprocessable_entity }
       end

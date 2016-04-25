@@ -9,7 +9,7 @@
       %th Active
       %th &nbsp;
   %tbody
-    - @projects.each do |project|
+    - @projects.sort.each do |project|
       %tr
         %td= link_to project.name, project
         %td{style: "background-color:#{project.color}"} &nbsp;

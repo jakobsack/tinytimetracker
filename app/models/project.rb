@@ -5,10 +5,23 @@ class Project < ActiveRecord::Base
   has_many :records
 
   validates_each :parent_id do |record, attr, value|
-#     if value
-#       record.errors.add(attr, 'Überverzeichnis gehört nicht zur gleichen Ausgabe!') if record.parent.parent
-#     else
-#       record.errors.add(attr, 'Überverzeichnis gehört nicht zur gleichen Ausgabe!') if record.children.any?
-#     end
+    if value &&
+        ( record.parent.parent || record.children.any? )
+      record.errors.add(attr, 'Die Projekte dürfen nur zwei Ebenen tief sein!')
+    end
+  end
+
+  def <=> other
+    if parent_id && other.parent_id && parent_id == other.parent_id
+      name <=> other.name
+    elsif parent_id && other.parent_id
+      parent <=> other.parent
+    elsif parent_id
+      parent <=> other
+    elsif other.parent_id
+      self <=> other.parent
+    else
+      name <=> other.name
+    end
   end
 end
