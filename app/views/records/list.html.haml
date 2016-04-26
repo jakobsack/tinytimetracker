@@ -8,18 +8,16 @@
       %th Farbe
       %th Beginn
       %th Ende
+      %th Dauer
       %th &nbsp;
   %tbody
     - @records.sort.each do |record|
       %tr
         %td= record.project.name
         %td{style: "background-color:#{record.project.color}"} &nbsp;
-        %td= l record.begun_at
-        %td
-          - if record.ended_at
-            = l record.ended_at
-          - else
-            &nbsp;
+        %td= time_start record.begun_at
+        %td= time_end record.ended_at
+        %td= time_diff(record.begun_at, record.ended_at)
         %td
           = link_to edit_project_record_path(record.project, record) do
             = fa_icon 'edit'

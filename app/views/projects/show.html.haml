@@ -10,12 +10,9 @@
   %tbody
     - @project.records.sort.each do |record|
       %tr
-        %td= l record.begun_at
-        %td
-          - if record.ended_at
-            = l record.ended_at
-          - else
-            &nbsp;
+        %td= time_start record.begun_at
+        %td= time_end record.ended_at
+        %td= time_diff(record.begun_at, record.ended_at)
         %td
           = link_to edit_project_record_path(@project, record) do
             = fa_icon 'edit'

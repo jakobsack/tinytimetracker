@@ -16,6 +16,8 @@ class Project < ActiveRecord::Base
       name <=> other.name
     elsif parent_id && other.parent_id
       parent <=> other.parent
+    elsif parent_id == other.id
+      1
     elsif parent_id
       parent <=> other
     elsif other.parent_id

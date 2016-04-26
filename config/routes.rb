@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     end
   end
   get 'records' => 'records#list'
+  resources :users, only: [:edit, :update]
 
   root 'projects#dashboard'
 end

@@ -80,7 +80,7 @@ class RecordsController < ApplicationController
     @record.save!
 
     respond_to do |format|
-      format.html { redirect_to dashboard_projects_url, notice: 'Begun work!' }
+      format.html { redirect_to dashboard_projects_url }
       format.json { head :no_content }
     end
   end
@@ -89,7 +89,7 @@ class RecordsController < ApplicationController
     fail "boo" unless Record.close_last_record_for(current_user.id)
 
     respond_to do |format|
-      format.html { redirect_to dashboard_projects_url, notice: 'Stopped work!' }
+      format.html { redirect_to dashboard_projects_url }
       format.json { head :no_content }
     end
   end

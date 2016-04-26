@@ -1,0 +1,9 @@
+= semantic_form_for(@user) do |f|
+  = f.semantic_errors
+  = f.inputs do
+    = f.input :current_password, label: 'Aktuelles Passwort'
+    = f.input :password, label: 'Neues Passwort'
+    = f.input :password_confirmation, label: 'Neues Passwort (wiederholen)'
+  = f.actions do
+    = f.action :submit, as: :button, label: 'Speichern', button_html: { class: 'btn btn-primary' }
+    = f.action :cancel, as: :link, label: 'Abbrechen', button_html: { class: 'btn btn-default' }

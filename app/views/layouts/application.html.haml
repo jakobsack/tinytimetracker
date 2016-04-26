@@ -20,9 +20,10 @@
           %a.navbar-brand(href="#{dashboard_projects_path}") T³
           .navbar-collapse.collapse.navbar-responsive-collapse
             %ul.nav.navbar-nav
-              %li= link_to "Projekte", projects_path
-              %li= link_to 'Records', records_path
-              %li= link_to "Abmelden", session_path(:current), method: :delete
+              %li= link_to 'Projekte', projects_path
+              %li= link_to 'Aufzeichnungen', records_path
+              %li= link_to 'Passwort ändern', edit_user_path(:current)
+              %li= link_to 'Abmelden', session_path(:current), method: :delete
 
     .container
       = bootstrap_flash

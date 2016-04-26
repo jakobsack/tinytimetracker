@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  attr_accessor :current_password
+
   acts_as_authentic do |c|
     c.session_class = Session
     c.crypto_provider = Authlogic::CryptoProviders::Sha512
