@@ -5,14 +5,12 @@
   %thead
     %tr
       %th Name
-      %th Color
       %th Active
       %th &nbsp;
   %tbody
     - @projects.sort.each do |project|
       %tr
-        %td= link_to project.name, project
-        %td{style: "background-color:#{project.color}"} &nbsp;
+        %td{style: "border-left:7px solid #{project.color};"}= link_to project.name, project
         %td= project.active ? 'Yes' : 'No'
         %td
           = link_to edit_project_path(project) do

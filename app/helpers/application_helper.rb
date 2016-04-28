@@ -17,7 +17,12 @@ module ApplicationHelper
   def time_diff from, to
     return '' unless to
 
-    diff = to - from
+    format_diff(to - from)
+  end
+
+  def format_diff diff, seconds = true
+    return '' unless diff > 0.1
+
     s = ''
     if diff > 3600
       s += '%02ih ' % (diff / 3600).to_i
@@ -27,8 +32,15 @@ module ApplicationHelper
       s += '%02im ' % (diff / 60).to_i
       diff -= (diff / 60).to_i * 60
     end
-    s += '%02is' % diff.to_i
+    s += '%02is' % diff.to_i if seconds
+    s.strip
+  end
 
-    s
+  def records_time records, project, day
+    reduced = records.select {|r| r.project_id == project.id && r.ended_at }
+    reduced.select! {|r| r.begun_at >= day && r.begun_at < day + 1.day }
+    reduced.inject(0.0) do |sum, record|
+      sum + (record.ended_at - record.begun_at)
+    end
   end
 end

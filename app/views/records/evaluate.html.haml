@@ -1,0 +1,41 @@
+.page-header
+  %h1 Auswertung (#{@monday.strftime('%d.%m.%Y')} - #{@monday.end_of_week.strftime('%d.%m.%Y')})
+
+%p
+  = link_to "<< vorherige Woche", evaluation_path(week: (@monday - 1.week).strftime('%Y-%m-%d'))
+  \|
+  = link_to "nächste Woche >>", evaluation_path(week: (@monday + 1.week).strftime('%Y-%m-%d'))
+
+%table.table.table-striped
+  %thead
+    %tr
+      %th Projekt
+      - 7.times do |i|
+        %th
+          = l(@monday + i.days, format: '%A')
+          %br
+          = (@monday + i.days).strftime('%d.%m')
+  %tbody
+    - total = {}
+    - normtotal = {}
+    - 7.times {|i| total[@monday + i.days] = 0.0;normtotal[@monday + i.days] = 0.0; }
+    - @projects.each do |project|
+      %tr
+        %td{style: "border-left:7px solid #{project.color};"}= project.name
+        - 7.times do |i|
+          - day = @monday + i.days
+          - diff = records_time(@records, project, day)
+          - normdiff = records_time(@normalized, project, day)
+          - total[day] += diff
+          - normtotal[day] += normdiff
+          %td
+            = format_diff(diff)
+            %br
+            = format_diff(normdiff, false)
+    %tr
+      %td Insgesamt
+      - 7.times do |i|
+        %td
+          = format_diff(total[@monday + i.days])
+          %br
+          = format_diff(normtotal[@monday + i.days], false)

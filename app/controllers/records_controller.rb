@@ -1,5 +1,5 @@
 class RecordsController < ApplicationController
-  before_action :set_project, except: [:list]
+  before_action :set_project, except: [:list, :evaluate]
   before_action :set_record, only: [:show, :edit, :update, :destroy, :close]
 
   # GET /records
@@ -96,6 +96,20 @@ class RecordsController < ApplicationController
 
   def list
     @records = current_user.records
+  end
+
+  def evaluate
+    week = params.permit(:week)[:week]
+    @monday = nil
+    begin
+      @monday = Time.parse(week).beginning_of_week
+    rescue
+      @monday = Time.now.beginning_of_week
+    end
+
+    @records = current_user.records.includes(:project).where('begun_at >= ? AND begun_at < ?', @monday, @monday + 1.week)
+    @projects = @records.map{|r|r.project}.uniq
+    @normalized = Record.normalize_records(@records, @monday)
   end
 
   private
