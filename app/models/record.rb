@@ -32,10 +32,10 @@ class Record < ActiveRecord::Base
         balance = 0.0
 
         normalized = (today/900).to_i * 900
-        unless today % 900 > 300
+        if today % 900 > 300
           normalized += 900
         end
-        normalized = 900 if normalized == 0
+        normalized = 900 if normalized == 0.0
         balance += today - normalized
 
         new_records << new(begun_at: this, ended_at: this + normalized, project: project)

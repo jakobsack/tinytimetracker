@@ -19,7 +19,7 @@
     - total = {}
     - normtotal = {}
     - 7.times {|i| total[@monday + i.days] = 0.0;normtotal[@monday + i.days] = 0.0; }
-    - @projects.each do |project|
+    - @projects.sort.each do |project|
       %tr
         %td{style: "border-left:7px solid #{project.color};"}= project.name
         - 7.times do |i|
