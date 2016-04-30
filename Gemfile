@@ -22,6 +22,7 @@ gem 'twitter-bootstrap-rails', '~> 3.2'         # Bootstrap files
 gem 'formtastic-bootstrap', '~> 3.1'            # Bootstrap files for formtastic
 gem 'font-awesome-rails', '~> 4.3.0'            # nice symbols
 gem 'rgb', '~> 0.1.0'                           # colors
+gem 'will_paginate-bootstrap', '~> 1.0'         # cut down huge lists
 
 group :development, :test do
   gem 'byebug'

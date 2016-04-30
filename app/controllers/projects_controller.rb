@@ -10,6 +10,7 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
+    @records = @project.records.order(:begun_at).paginate(page: params[:page])
   end
 
   # GET /projects/new

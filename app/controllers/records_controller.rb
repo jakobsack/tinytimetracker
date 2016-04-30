@@ -95,7 +95,7 @@ class RecordsController < ApplicationController
   end
 
   def list
-    @records = current_user.records
+    @records = current_user.records.order(:begun_at).paginate(page: params[:page])
   end
 
   def evaluate
