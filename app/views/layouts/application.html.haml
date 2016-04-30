@@ -20,6 +20,7 @@
           %a.navbar-brand(href="#{dashboard_projects_path}") T³
           .navbar-collapse.collapse.navbar-responsive-collapse
             %ul.nav.navbar-nav
+              %li= link_to 'Dashboard', dashboard_projects_path
               %li= link_to 'Projekte', projects_path
               %li= link_to 'Aufzeichnungen', records_path
               %li= link_to 'Auswertung', evaluation_path
