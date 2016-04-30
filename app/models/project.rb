@@ -5,10 +5,7 @@ class Project < ActiveRecord::Base
   has_many :records
 
   validates_each :parent_id do |record, attr, value|
-    if value &&
-        ( record.parent.parent || record.children.any? )
-      record.errors.add(attr, 'Die Projekte dürfen nur zwei Ebenen tief sein!')
-    end
+    record.errors.add(attr, 'Das Projekt  kann kein Unterprojekt seiner selbst sein!') if value == id
   end
 
   def <=> other
