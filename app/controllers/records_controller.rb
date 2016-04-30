@@ -67,7 +67,7 @@ class RecordsController < ApplicationController
   def destroy
     @record.destroy
     respond_to do |format|
-      format.html { redirect_to projects_url(@project), notice: 'Record was successfully destroyed.' }
+      format.html { redirect_to project_url(@project), notice: 'Record was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -109,7 +109,7 @@ class RecordsController < ApplicationController
 
     @records = current_user.records.includes(:project).where('begun_at >= ? AND begun_at < ?', @monday, @monday + 1.week)
     @projects = @records.map{|r|r.project}.uniq
-    @normalized = Record.normalize_records(@records, @monday)
+    @normalized = Record.normalize_records(@records)
   end
 
   private
