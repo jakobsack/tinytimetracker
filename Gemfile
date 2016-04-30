@@ -34,5 +34,6 @@ group :development do
   gem 'capistrano-passenger', '~> 0.0.2'          #   Restart
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'quiet_assets', '~> 1.1'                    # Shut up!
 end
 
