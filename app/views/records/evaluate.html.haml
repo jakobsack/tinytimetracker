@@ -1,15 +1,15 @@
 .page-header
-  %h1 Auswertung (#{@monday.strftime('%d.%m.%Y')} - #{@monday.end_of_week.strftime('%d.%m.%Y')})
+  %h1= _('Evaluation (%{monday} - %{sunday})') % { monday: @monday.strftime('%d.%m.%Y'), sunday: @monday.end_of_week.strftime('%d.%m.%Y') }
 
 %p
-  = link_to "<< vorherige Woche", evaluation_path(week: (@monday - 1.week).strftime('%Y-%m-%d'))
+  = link_to _("<< previous week"), evaluation_path(week: (@monday - 1.week).strftime('%Y-%m-%d'))
   \|
-  = link_to "nächste Woche >>", evaluation_path(week: (@monday + 1.week).strftime('%Y-%m-%d'))
+  = link_to _("next week >>"), evaluation_path(week: (@monday + 1.week).strftime('%Y-%m-%d'))
 
 %table.table.table-striped
   %thead
     %tr
-      %th Projekt
+      %th= _('Project')
       - 7.times do |i|
         %th
           = l(@monday + i.days, format: '%A')
@@ -33,7 +33,7 @@
             %br
             = format_diff(normdiff, false)
     %tr
-      %td Insgesamt
+      %td= _('Total')
       - 7.times do |i|
         %td
           = format_diff(total[@monday + i.days])

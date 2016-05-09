@@ -2,9 +2,9 @@
   = f.semantic_errors
   = f.inputs do
     = f.input :parent, collection: @projects
-    = f.input :name, label: 'Name'
-    = f.input :color, label: 'Farbe'
-    = f.input :active, label: 'Im Dashboard anzeigen'
+    = f.input :name, label: _('Name')
+    = f.input :color, label: _('Colour'), hint: _('Format: #89abcd')
+    = f.input :active, label: _('Show in dashboard')
   = f.actions do
-    = f.action :submit, as: :button, label: 'Speichern', button_html: { class: 'btn btn-primary' }
-    = f.action :cancel, as: :link, label: 'Abbrechen', button_html: { class: 'btn btn-default' }
+    = f.action :submit, as: :button, label: _('Save'), button_html: { class: 'btn btn-primary' }
+    = f.action :cancel, as: :link, label: _('Cancel'), button_html: { class: 'btn btn-default' }

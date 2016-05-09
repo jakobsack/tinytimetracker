@@ -1,6 +1,6 @@
 = form_for @session , html: { class: 'form-signin' } do |f|
-  %h2.form-signin-heading Anmelden
-  = f.text_field :username, class: 'form-control', placeholder: 'Benutzername', required: true, autofocus: true
-  = f.password_field :password, class: 'form-control', placeholder: 'Passwort', required: true
+  %h2.form-signin-heading= _('Tiny Time Tracker')
+  = f.text_field :username, class: 'form-control', placeholder: _('Username'), required: true, autofocus: true
+  = f.password_field :password, class: 'form-control', placeholder: _('Password'), required: true
   = f.button class: 'btn btn-lg btn-primary btn-block' do
-    Sign in
+    = _('Sign in')

@@ -11,11 +11,11 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if !@user.valid_password?(params.require(:user).permit(:current_password)[:current_password])
-        @user.errors.add(:current_password, 'Das Passwort war nicht korrekt')
+        @user.errors.add(:current_password, _('Your old password was not correct'))
         format.html { render :edit }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       elsif @user.update(user_params)
-        format.html { redirect_to dashboard_projects_path, notice: 'Passwort wurde geändert.' }
+        format.html { redirect_to dashboard_projects_path, notice: _('Password was successfully updated.') }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }

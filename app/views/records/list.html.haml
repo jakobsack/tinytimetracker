@@ -1,14 +1,14 @@
 .page-header
-  %h1 Records
+  %h1= _('Records')
 
 = will_paginate @records
 
 %table.table.table-striped
   %thead
     %tr
-      %th Projekt
-      %th Beginn
-      %th Dauer
+      %th= _('Project')
+      %th= _('Begin')
+      %th= _('Duration')
       %th &nbsp;
   %tbody
     - @records.each do |record|
@@ -20,8 +20,8 @@
           = link_to edit_project_record_path(record.project, record) do
             = fa_icon 'edit'
           = fa_icon 'fw'
-          = link_to project_record_path(record.project, record), method: :delete, data: { confirm: 'Wirklich löschen' } do
+          = link_to project_record_path(record.project, record), method: :delete, data: { confirm: _('Are you sure?') } do
             = fa_icon 'times'
 
 .alert.alert-information
-  Records können auf den Projektseiten hinzugefügt werden.
+  = _('You can manually add records at the projects page.')

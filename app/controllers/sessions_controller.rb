@@ -30,7 +30,7 @@ class SessionsController < ApplicationController
     respond_to do |format|
       if @session.save
         log 'SUCCESS'
-        format.html { redirect_to sessions_path, notice: 'Angemeldet.' }
+        format.html { redirect_to sessions_path }
         format.json { render json: @session, status: :created }
       else
         log 'FAILURE'

@@ -4,7 +4,7 @@
     %meta(charset="utf-8")
     %meta(http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1")
     %meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    %title= "Tiny Time Tracker"
+    %title= _('Tiny Time Tracker')
     = csrf_meta_tags
     = stylesheet_link_tag "application", :media => "all"
     = javascript_include_tag "application"
@@ -20,12 +20,12 @@
           %a.navbar-brand(href="#{dashboard_projects_path}") T³
           .navbar-collapse.collapse.navbar-responsive-collapse
             %ul.nav.navbar-nav
-              %li= link_to 'Dashboard', dashboard_projects_path
-              %li= link_to 'Projekte', projects_path
-              %li= link_to 'Aufzeichnungen', records_path
-              %li= link_to 'Auswertung', evaluation_path
-              %li= link_to 'Passwort ändern', edit_user_path(:current)
-              %li= link_to 'Abmelden', session_path(:current), method: :delete
+              %li= link_to _('Dashboard'), dashboard_projects_path
+              %li= link_to _('Projects'), projects_path
+              %li= link_to _('Records'), records_path
+              %li= link_to _('Evaluation'), evaluation_path
+              %li= link_to _('Change Password'), edit_user_path(:current)
+              %li= link_to _('Logout'), session_path(:current), method: :delete
 
     .container
       = bootstrap_flash

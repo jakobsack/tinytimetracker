@@ -2,8 +2,8 @@
   = f.semantic_errors
   = f.inputs do
     = f.input :project, collection: @projects
-    = f.input :begun_at, label: 'Beginn'
-    = f.input :ended_at, label: 'Ende'
+    = f.input :begun_at, as: :string, label: _('Begin')
+    = f.input :ended_at, as: :string, label: _('End')
   = f.actions do
-    = f.action :submit, as: :button, label: 'Speichern', button_html: { class: 'btn btn-primary' }
-    = f.action :cancel, as: :link, label: 'Abbrechen', button_html: { class: 'btn btn-default' }
+    = f.action :submit, as: :button, label: _('Save'), button_html: { class: 'btn btn-primary' }
+    = f.action :cancel, as: :link, label: _('Cancel'), button_html: { class: 'btn btn-default' }

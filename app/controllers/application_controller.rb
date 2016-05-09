@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user_session, :current_user
   before_filter :authenticate
+  before_filter :set_gettext_locale
 
   protected
 
@@ -12,7 +13,7 @@ class ApplicationController < ActionController::Base
     # sessions controller and extern* are allowed to do everything
     unless logged_in?
       respond_to do |format|
-        format.html { redirect_to new_session_path, error: 'Du bist nicht angemeldet! Bitte melde dich an, um fortzufahren.' }  # halts request cycle
+        format.html { redirect_to new_session_path, error: _('Please login to continue!') }  # halts request cycle
         format.json { head :unauthorized }
       end
     end

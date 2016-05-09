@@ -23,6 +23,7 @@ gem 'formtastic-bootstrap', '~> 3.1'            # Bootstrap files for formtastic
 gem 'font-awesome-rails', '~> 4.3.0'            # nice symbols
 gem 'rgb', '~> 0.1.0'                           # colors
 gem 'will_paginate-bootstrap', '~> 1.0'         # cut down huge lists
+gem 'gettext_i18n_rails', '~> 1.5'              # Rails i18n with gettext
 
 group :development, :test do
   gem 'byebug'
@@ -36,5 +37,7 @@ group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'quiet_assets', '~> 1.1'                    # Shut up!
+  gem 'gettext', '~> 3.2', require: false         # create po files
+  gem 'ruby_parser', '~> 3.8', require: false     # find strings in ruby, haml
 end
 

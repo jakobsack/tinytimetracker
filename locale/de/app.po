@@ -1,0 +1,182 @@
+# German translations for app package.
+# Copyright (C) 2016 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the app package.
+#
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+# Jakob Sack <mail@jakobsack.de>, 2016.
+msgid ""
+msgstr ""
+"Project-Id-Version: app 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2016-05-09 21:44+0100\n"
+"Last-Translator: Jakob Sack <mail@jakobsack.de>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"\n"
+"X-Generator: Lokalize 2.0\n"
+
+msgid "%{ago} ago you started working on %{project}."
+msgstr "Du hast vor %{ago} das Projekt %{project} begonnen."
+
+msgid "<< previous week"
+msgstr "<< vorherige Woche"
+
+msgid "Add project"
+msgstr "Projekt hinzufügen"
+
+msgid "Add record"
+msgstr "Aufzeichnung hinzufügen"
+
+msgid "Are you sure?"
+msgstr "Sind Sie sicher?"
+
+msgid "Back"
+msgstr "Zurück"
+
+msgid "Begin"
+msgstr "Start"
+
+msgid "Begun at:"
+msgstr "Start:"
+
+msgid "Cancel"
+msgstr "Abbrechen"
+
+msgid "Change Password"
+msgstr ""
+
+msgid "Change password"
+msgstr ""
+
+msgid "Colour"
+msgstr "Farbe"
+
+msgid "Current password"
+msgstr "Aktuelles Passwort"
+
+msgid "Dashboard"
+msgstr "Übersicht"
+
+msgid "Duration"
+msgstr "Dauer"
+
+msgid "Edit"
+msgstr "Bearbeiten"
+
+msgid "Edit project"
+msgstr "Projekt bearbeiten"
+
+msgid "Edit record"
+msgstr "Aufzeichnung bearbeiten"
+
+msgid "End"
+msgstr "Ende"
+
+msgid "Ended at:"
+msgstr "Ende:"
+
+msgid "Evaluation"
+msgstr "Auswertung"
+
+msgid "Evaluation (%{monday} - %{sunday})"
+msgstr "Auswertung (%{monday} - %{sunday})"
+
+msgid "Format: #89abcd"
+msgstr ""
+
+msgid "I'm done"
+msgstr "Fertig"
+
+msgid "Logout"
+msgstr ""
+
+msgid "Name"
+msgstr "Name"
+
+msgid "New password"
+msgstr "Neues Passwort"
+
+msgid "New password (confirmation)"
+msgstr ""
+
+msgid "No"
+msgstr "Nein"
+
+msgid "On dashboard"
+msgstr ""
+
+msgid "Password"
+msgstr ""
+
+msgid "Password was successfully updated."
+msgstr ""
+
+msgid "Please login to continue!"
+msgstr ""
+
+msgid "Project"
+msgstr ""
+
+msgid "Project was successfully created."
+msgstr ""
+
+msgid "Project was successfully destroyed."
+msgstr ""
+
+msgid "Project was successfully updated."
+msgstr ""
+
+msgid "Projects"
+msgstr ""
+
+msgid "Record"
+msgstr ""
+
+msgid "Record was successfully created."
+msgstr ""
+
+msgid "Record was successfully destroyed."
+msgstr ""
+
+msgid "Record was successfully updated."
+msgstr ""
+
+msgid "Records"
+msgstr ""
+
+msgid "Save"
+msgstr ""
+
+msgid "Show in dashboard"
+msgstr ""
+
+msgid "Sign in"
+msgstr ""
+
+msgid "Tiny Time Tracker"
+msgstr ""
+
+msgid "Total"
+msgstr ""
+
+msgid "Username"
+msgstr "Benutzername"
+
+msgid "Username and/or password invalid."
+msgstr "Benutzername und/oder Passwort ungültig"
+
+msgid "Yes"
+msgstr "Ja"
+
+msgid "You can manually add records at the projects page."
+msgstr ""
+
+msgid "Your old password was not correct"
+msgstr ""
+
+msgid "next week >>"
+msgstr ""

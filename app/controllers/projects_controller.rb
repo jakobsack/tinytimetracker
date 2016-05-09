@@ -4,24 +4,24 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
-    @projects = current_user.projects
+    @projects = Project.tree(current_user.projects)
   end
 
   # GET /projects/1
   # GET /projects/1.json
   def show
-    @records = @project.records.order(:begun_at).paginate(page: params[:page])
+    @records = @project.records.order('begun_at DESC').paginate(page: params[:page])
   end
 
   # GET /projects/new
   def new
     @project = current_user.projects.build
-    @projects = current_user.projects.reject {|p| p == @project}
+    @projects = Project.tree(current_user.projects.reject {|p| p == @project})
   end
 
   # GET /projects/1/edit
   def edit
-    @projects = current_user.projects.reject {|p| p == @project}
+    @projects = Project.tree(current_user.projects.reject {|p| p == @project})
   end
 
   # POST /projects
@@ -31,10 +31,10 @@ class ProjectsController < ApplicationController
 
     respond_to do |format|
       if @project.save
-        format.html { redirect_to projects_path, notice: 'Project was successfully created.' }
+        format.html { redirect_to projects_path, notice: _('Project was successfully created.') }
         format.json { render :show, status: :created, location: @project }
       else
-        @projects = current_user.projects.reject {|p| p == @project}
+        @projects = Project.tree(current_user.projects.reject {|p| p == @project})
         format.html { render :new }
         format.json { render json: @project.errors, status: :unprocessable_entity }
       end
@@ -46,10 +46,10 @@ class ProjectsController < ApplicationController
   def update
     respond_to do |format|
       if @project.update(project_params)
-        format.html { redirect_to @project, notice: 'Project was successfully updated.' }
+        format.html { redirect_to @project, notice: _('Project was successfully updated.') }
         format.json { render :show, status: :ok, location: @project }
       else
-        @projects = current_user.projects.reject {|p| p == @project}
+        @projects = Project.tree(current_user.projects.reject {|p| p == @project})
         format.html { render :edit }
         format.json { render json: @project.errors, status: :unprocessable_entity }
       end
@@ -61,14 +61,14 @@ class ProjectsController < ApplicationController
   def destroy
     @project.destroy
     respond_to do |format|
-      format.html { redirect_to projects_url, notice: 'Project was successfully destroyed.' }
+      format.html { redirect_to projects_url, notice: _('Project was successfully destroyed.') }
       format.json { head :no_content }
     end
   end
 
   def dashboard
     @open_record = current_user.open_record
-    @projects = current_user.projects.where(active: true)
+    @projects = Project.tree(current_user.projects)
   end
 
   private

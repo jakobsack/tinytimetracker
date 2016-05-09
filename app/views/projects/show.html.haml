@@ -6,8 +6,9 @@
 %table.table.table-striped
   %thead
     %tr
-      %th Beginn
-      %th Ende
+      %th= _('Begin')
+      %th= _('End')
+      %th= _('Duration')
       %th &nbsp;
   %tbody
     - @records.each do |record|
@@ -19,7 +20,10 @@
           = link_to edit_project_record_path(@project, record) do
             = fa_icon 'edit'
           = fa_icon 'fw'
-          = link_to project_record_path(@project, record), method: :delete, data: { confirm: 'Wirklich löschen' } do
+          = link_to project_record_path(@project, record), method: :delete, data: { confirm: _('Are you sure?') } do
             = fa_icon 'times'
 
-%p= link_to 'Record hinzufügen', new_project_record_path(@project)
+%p
+  = link_to new_project_record_path(@project) do
+    = fa_icon 'plus'
+    = _('Add record')

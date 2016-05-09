@@ -1,13 +1,11 @@
 - if @open_record
   .alert.alert-info{role: 'alert'}
     = form_tag close_project_record_path(@open_record.project, @open_record), method: :post do
-      Vor
-      = time_ago_in_words(@open_record.begun_at)
-      wurde das Projekt #{@open_record.project.name} gestartet.
-      = button_tag 'Close', class: 'btn btn-primary'
+      = _('%{ago} ago you started working on %{project}.') % { ago: time_ago_in_words(@open_record.begun_at), project: @open_record.project.name }
+      = button_tag _('I\'m done'), class: 'btn btn-primary'
 
 .row
-  - @projects.sort.each do |project|
+  - @projects.select{ |p| p.active }.each do |project|
     .col-md-2.col-sm3.col-xs-6
       = form_tag open_project_records_path(project), method: :post do
         = button_tag class: 'btn magic-button', style: "background-color:#{project.color};color:#{magic_font_color(project.color)}" do
