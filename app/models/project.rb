@@ -10,7 +10,7 @@ class Project < ActiveRecord::Base
     used_ids = []
     current = record
     while current
-      if used_ids.include?(current.parent_id)
+      if used_ids.include?(current.id)
         record.errors.add(attr, 'It\'s a project tree, not a project cycle!')
         break
       end

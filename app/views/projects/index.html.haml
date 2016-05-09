@@ -10,7 +10,7 @@
   %tbody
     - @projects.each do |project|
       %tr
-        %td{style: "border-left:7px solid #{project.color};"}= link_to project.name, project
+        %td{style: "border-left:7px solid #{project.color};padding-left:#{8 + project.depth * 20}px;"}= link_to project.name, project
         %td= project.active ? _('Yes') : _('No')
         %td
           = link_to edit_project_path(project) do
