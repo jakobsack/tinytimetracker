@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2016-05-09 21:44+0100\n"
+"PO-Revision-Date: 2016-05-10 19:57+0100\n"
 "Last-Translator: Jakob Sack <mail@jakobsack.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -47,10 +47,10 @@ msgid "Cancel"
 msgstr "Abbrechen"
 
 msgid "Change Password"
-msgstr ""
+msgstr "Passwort ändern"
 
 msgid "Change password"
-msgstr ""
+msgstr "Passwort ändern"
 
 msgid "Colour"
 msgstr "Farbe"
@@ -86,13 +86,13 @@ msgid "Evaluation (%{monday} - %{sunday})"
 msgstr "Auswertung (%{monday} - %{sunday})"
 
 msgid "Format: #89abcd"
-msgstr ""
+msgstr "Format: #89abcd"
 
 msgid "I'm done"
 msgstr "Fertig"
 
 msgid "Logout"
-msgstr ""
+msgstr "Abmelden"
 
 msgid "Name"
 msgstr "Name"
@@ -101,67 +101,67 @@ msgid "New password"
 msgstr "Neues Passwort"
 
 msgid "New password (confirmation)"
-msgstr ""
+msgstr "Neues Passwort (bestätigen)"
 
 msgid "No"
 msgstr "Nein"
 
 msgid "On dashboard"
-msgstr ""
+msgstr "Auf Übersicht"
 
 msgid "Password"
-msgstr ""
+msgstr "Passwort"
 
 msgid "Password was successfully updated."
-msgstr ""
+msgstr "Passwurd geändert!"
 
 msgid "Please login to continue!"
-msgstr ""
+msgstr "Bitte anmelden um fortzufahren!"
 
 msgid "Project"
-msgstr ""
+msgstr "Projekt"
 
 msgid "Project was successfully created."
-msgstr ""
+msgstr "Projekt erstellt."
 
 msgid "Project was successfully destroyed."
-msgstr ""
+msgstr "Projekt gelöscht."
 
 msgid "Project was successfully updated."
-msgstr ""
+msgstr "Projekt bearbeitet."
 
 msgid "Projects"
-msgstr ""
+msgstr "Projekte"
 
 msgid "Record"
-msgstr ""
+msgstr "Eintrag"
 
 msgid "Record was successfully created."
-msgstr ""
+msgstr "Eintrag hinzugefügt."
 
 msgid "Record was successfully destroyed."
-msgstr ""
+msgstr "Eintrag gelöscht."
 
 msgid "Record was successfully updated."
-msgstr ""
+msgstr "Eintrag bearbeitet."
 
 msgid "Records"
-msgstr ""
+msgstr "Einträge"
 
 msgid "Save"
-msgstr ""
+msgstr "Speicherm"
 
 msgid "Show in dashboard"
-msgstr ""
+msgstr "In Übersicht zeigen"
 
 msgid "Sign in"
-msgstr ""
+msgstr "Anmelden"
 
 msgid "Tiny Time Tracker"
-msgstr ""
+msgstr "Tiny Time Tracker"
 
 msgid "Total"
-msgstr ""
+msgstr "Insgesamt"
 
 msgid "Username"
 msgstr "Benutzername"
@@ -173,10 +173,11 @@ msgid "Yes"
 msgstr "Ja"
 
 msgid "You can manually add records at the projects page."
-msgstr ""
+msgstr "Du kannst auf den jeweiligen Projektseiten Aufzeichnungen hinzufügen."
 
 msgid "Your old password was not correct"
-msgstr ""
+msgstr "Dein altes Passwort war nicht korrekt."
 
 msgid "next week >>"
-msgstr ""
+msgstr "nächste Woche >>"
+
