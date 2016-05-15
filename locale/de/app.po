@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2016-05-10 19:57+0100\n"
+"PO-Revision-Date: 2016-05-15 14:35+0100\n"
 "Last-Translator: Jakob Sack <mail@jakobsack.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -55,6 +55,12 @@ msgstr "Passwort ändern"
 msgid "Colour"
 msgstr "Farbe"
 
+msgid "Could not create new record."
+msgstr "Konnte Aufzeichnung nicht starten."
+
+msgid "Could not create project."
+msgstr "Konnte Projekt nicht erstellen."
+
 msgid "Current password"
 msgstr "Aktuelles Passwort"
 
@@ -90,6 +96,10 @@ msgstr "Format: #89abcd"
 
 msgid "I'm done"
 msgstr "Fertig"
+
+#, fuzzy
+msgid "Kick-start"
+msgstr "Los"
 
 msgid "Logout"
 msgstr "Abmelden"
@@ -180,4 +190,3 @@ msgstr "Dein altes Passwort war nicht korrekt."
 
 msgid "next week >>"
 msgstr "nächste Woche >>"
-

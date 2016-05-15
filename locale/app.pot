@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-09 21:45+0200\n"
-"PO-Revision-Date: 2016-05-09 21:45+0200\n"
+"POT-Creation-Date: 2016-05-15 14:43+0200\n"
+"PO-Revision-Date: 2016-05-15 14:43+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -54,6 +54,12 @@ msgstr ""
 msgid "Colour"
 msgstr ""
 
+msgid "Could not create new record."
+msgstr ""
+
+msgid "Could not create project."
+msgstr ""
+
 msgid "Current password"
 msgstr ""
 
@@ -88,6 +94,9 @@ msgid "Format: #89abcd"
 msgstr ""
 
 msgid "I'm done"
+msgstr ""
+
+msgid "Kick-start"
 msgstr ""
 
 msgid "Logout"

@@ -88,7 +88,7 @@ class ProjectsController < ApplicationController
         format.html { redirect_to dashboard_projects_path }
         format.json { render :show, status: :created, location: @project }
       else
-        format.html { redirect_to dashboard_projects_path, alert: _('Could not start record.') }
+        format.html { redirect_to dashboard_projects_path, alert: _('Could not create new record.') }
         format.json { render json: @project.errors, status: :unprocessable_entity }
       end
     end
