@@ -1,3 +1,28 @@
 // Place all the styles related to the projects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.kick-start-form {
+  width:100%;
+}
+
+.kick-start-form input, .kick-start-form select {
+  width:100%;
+}
+
+.kick-start-form input[type="text"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.kick-start-form select {
+  margin-bottom: -1px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.kick-start-form input[type="submit"] {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}

@@ -19,6 +19,10 @@ class Project < ActiveRecord::Base
     end
   end
 
+  def to_label
+    "--" * (depth || 0) + name
+  end
+
   def self.tree projects
     # create the tree
     recursive_tree_worker projects.sort { |a, b| a.name <=> b.name}, 0

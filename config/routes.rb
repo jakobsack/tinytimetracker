@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :projects do
     collection do
       get :dashboard
+      post :kick_start
     end
     resources :records do
       collection do

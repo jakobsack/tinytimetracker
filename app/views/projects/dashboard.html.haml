@@ -11,3 +11,9 @@
         = button_tag class: 'btn magic-button', style: "background-color:#{project.color};color:#{magic_font_color(project.color)}" do
           = project.name
       %br
+  .col-md-2.col-sm3.col-xs-6
+    = form_tag kick_start_projects_path(), method: :post, class: 'kick-start-form' do
+      = text_field_tag 'project[name]', '', class: 'form-control'
+      = select_tag 'project[parent_id]', options_from_collection_for_select(@projects, "id", "to_label"), include_blank: true, class: 'form-control'
+      = submit_tag _('Create and start'), class: 'btn btn-default'
+    %br

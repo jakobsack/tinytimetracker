@@ -66,6 +66,34 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def kick_start
+    @project = current_user.projects.build(project_params)
+    @project.color = RGB::Color.from_rgb((rand * 256).to_i, (rand * 256).to_i, (rand * 256).to_i).to_rgb_hex
+    @project.active = true
+
+    unless @project.save
+      format.html { redirect_to dashboard_projects_path, alert: _('Could not create project.') }
+      format.json { render json: @project.errors, status: :unprocessable_entity }
+      return
+    end
+
+    Record.close_last_record_for(current_user.id)
+    @record = @project.records.build
+    @record.user = current_user
+    @record.begun_at = Time.now
+    @record.save!
+
+    respond_to do |format|
+      if @record.save
+        format.html { redirect_to dashboard_projects_path }
+        format.json { render :show, status: :created, location: @project }
+      else
+        format.html { redirect_to dashboard_projects_path, alert: _('Could not start record.') }
+        format.json { render json: @project.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   def dashboard
     @open_record = current_user.open_record
     @projects = Project.tree(current_user.projects)
