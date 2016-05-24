@@ -6,6 +6,7 @@ class Project < ActiveRecord::Base
 
   attr_accessor :depth, :is_first_child, :is_last_child
 
+  validates :name, presence: true, allow_blank: false
   validates_each :parent_id do |record, attr, value|
     used_ids = []
     current = record
